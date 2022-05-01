@@ -1,0 +1,42 @@
+:root {
+    --backgroud-color-app: #ECECEC;
+    --backgroud-color-panel: #070116;
+    --color-light: #fff;
+    --color-dark: #312F2F;
+}
+
+body {
+    margin:0;
+    padding: 0;
+    background-color: var(--backgroud-color-app);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'Rubik-SemiBold';
+    src: url('../fonts/Rubik/Rubik-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url('../fonts/Rubik/Rubik-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-Medium';
+    src: url('../fonts/Rubik/Rubik-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('../fonts/Rubik/Rubik-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-Light';
+    src: url('../fonts/Rubik/Rubik-Light.ttf');
+}

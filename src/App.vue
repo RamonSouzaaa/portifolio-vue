@@ -1,26 +1,50 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="profile">
+      <ProfilePicComponent/>
+      <IconComponent/>
+    </div>
+    <div class="about">
+      <AboutComponent/>
+      <SkillComponent/>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProfilePicComponent from './components/ProfilePic.vue'
+import AboutComponent from './components/About.vue'
+import SkillComponent from './components/Skill.vue'
+import IconComponent from './components/Icon.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AboutComponent,
+    ProfilePicComponent,
+    SkillComponent,
+    IconComponent
   }
-}
+};
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 890px;
+  height: 540px;
+  border-radius: 19px;
+  background-color: var(--backgroud-color-panel);
+  display: flex;
+  align-items: center;
 }
+
+#app > .profile {
+  flex:1;
+}
+
+#app > .about {
+  flex:2;
+}
+
+
 </style>
