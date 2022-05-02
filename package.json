@@ -11,6 +11,7 @@
     "@iconify/vue": "^3.2.1",
     "bootstrap-icons-vue": "^1.8.1",
     "core-js": "^3.8.3",
+    "moment": "^2.29.3",
     "vue": "^3.2.13"
   },
   "devDependencies": {

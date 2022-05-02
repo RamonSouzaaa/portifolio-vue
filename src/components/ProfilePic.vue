@@ -19,7 +19,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border:1px solid white;
     }
 
     #profile-pic > img {
@@ -30,11 +29,13 @@
 
     #profile-pic > h2 {
         font-family: "Rubik-SemiBold";
+        color: var(--color-text);
     }
     
     #profile-pic > h4 {
         font-family: "Rubik-Regular";
         margin-top:-15px;
+        color: var(--color-text);
     }
 
 </style>

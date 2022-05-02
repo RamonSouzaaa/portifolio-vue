@@ -1,38 +1,52 @@
 <template>
   <div id="about">
       <article>
-        <h2>Olá, tudo bem?</h2>
-        <p>
-          Me chamo Ramon tenho 23 anos, sou desenvolvedor de software pleno na
-          empresa Thomson Reuters Brasil desde 2017 quando iniciei minha
-          carreira como programador. Gosto de estudar novas tecnologias e
-          aprimorar meus conhecimentos, com isso conclui alguns projetos que
-          consegui na internet. Tenho conhecimento em banco de dados relacional,
-          desenvolvimento de aplições web e desktop utilizando orientação a
-          objetos.
-        </p>
+        <h2>{{title}}</h2>
+        <p>{{text}}</p>
       </article>
   </div>
 </template>
 
 <script>
     export default {
-        name: 'AboutComponent'
+        name: 'AboutComponent',
+        props: {
+            title: String,
+            text: String
+        },
+        data(){
+            return {
+                
+            }
+        }
     };
 </script>
 
 <style scoped>
     #about > article {
-        color: var(--color-light);
-        border:1px solid white;
+        color: var(--color-text);
     }
 
     #about > article > h2 {
         font-family: "Rubik-Medium";
+        color: var(--color-text);
     }
 
     #about > article > p {
         font-family: "Rubik-Regular";
         word-spacing: 5px;
+        line-height: 1.6;
+        margin-right:50px;
+        color: var(--color-text);
+    }
+
+    @media screen and (max-width: 840px) {
+        #about{
+            padding:0px 10px 0px 10px;
+        } 
+
+        #about > article > p {
+            margin-right:0px;
+        }
     }
 </style>

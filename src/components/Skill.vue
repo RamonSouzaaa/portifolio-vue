@@ -22,8 +22,7 @@
 
 <style scoped>
     #skill{
-        color:white;
-        border:1px solid white;
+        color: var(--color-text);
     }
 
     #skill > h2{
@@ -44,6 +43,11 @@
         width: 48px;
         height: 50px;
         padding:0px 7px 0px 7px;
-        border:1px solid white;
+    }
+
+    @media screen and (max-width: 840px) {
+        #skill{
+            padding:0px 10px 0px 10px;
+        } 
     }
 </style>
