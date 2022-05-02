@@ -1,6 +1,6 @@
 <template>
   <div id="skill">
-      <h2>Habilidades</h2>
+      <h2>{{title}}</h2>
       <ul>
           <li><Icon icon="akar-icons:html-fill" class="icon"/></li>
           <li><Icon icon="akar-icons:css-fill" class="icon"/></li>
@@ -14,6 +14,9 @@
     import { Icon } from '@iconify/vue';
     export default {
         name:'SkillComponent',
+        props: {
+            title:String
+        },
         components: {
             Icon
         }

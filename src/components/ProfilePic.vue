@@ -2,13 +2,16 @@
     <div id="profile-pic">
         <img src="../assets/profile-pic.webp" alt="Profile-Pic">
         <h2>Ramon de Souza</h2>
-        <h4>Desenvolvedor de Software</h4>
+        <h4>{{title}}</h4>
     </div>
 </template>
     
 <script>
     export default {
-        name: 'ProfilePicComponent'
+        name: 'ProfilePicComponent',
+        props: {
+            title: String
+        }
     };
 </script>
 

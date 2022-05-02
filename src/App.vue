@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <div class="utils">
-      <Icon icon="openmoji:flag-brazil" class="icon" />
-      <Icon icon="openmoji:flag-united-states" class="icon" />
+      <Icon :icon="mode" class="iconMode" @click="modifyMode()"/>
+      <Icon icon="openmoji:flag-brazil" class="icon" id="iconBr" @click="modifyLang()"/>
+      <Icon icon="openmoji:flag-united-states" class="icon" id="iconEn" @click="modifyLang()"/>
     </div>
     <div class="container">
       <div class="profile">
-        <ProfilePicComponent />
-        <IconComponent />
+        <ProfilePicComponent :title="titleProfileDefault"/>
+        <IconComponent/>
       </div>
       <div class="line"></div>
       <div class="about">
-        <AboutComponent :title="titleDefault" :text="textDefault"/>
-        <SkillComponent />
+        <AboutComponent :title="titleAboutDefault" :text="textAboutDefault"/>
+        <SkillComponent :title="textSkillDefault"/>
       </div>
     </div>
   </div>
@@ -37,23 +38,33 @@ export default {
   },
   data(){
     return {
-      titlePtBr: `Olá, tudo bem?`,
-      textPtBr: `Me chamo Ramon tenho 23 anos, sou desenvolvedor de software pleno na
+      lang: 'en',
+      modeLight: 'clarity:moon-solid',
+      modeDark: 'bi:sun-fill',
+      mode: '',
+      titleAboutPtBr: `Olá, tudo bem?`,
+      textAboutPtBr: `Me chamo Ramon tenho 23 anos, sou desenvolvedor de software pleno na
           empresa Thomson Reuters Brasil desde 2017 quando iniciei minha
           carreira como programador. Gosto de estudar novas tecnologias e
           aprimorar meus conhecimentos, com isso conclui alguns projetos que
           consegui na internet. Tenho conhecimento em banco de dados relacional,
           desenvolvimento de aplições web e desktop utilizando orientação a
           objetos.`,
-      titleEn: `Hi!`,
-      textEn: `My name is Ramon, I'm 23 years old, I've been a full-time 
+      titleAboutEn: `Hi!`,
+      textAboutEn: `My name is Ramon, I'm 23 years old, I've been a full-time 
                software developer at Thomson Reuters Brasil since 2017 when
                I started my career as a programmer. I like to study new technologies 
                and my knowledge, with that I complete some projects that I got 
                on the internet. I have knowledge in relational database, web and 
                desktop application development using object orientation.`,
-      titleDefault: '',
-      textDefault: ''
+      titleSkillPtBr: `Habilidades`,
+      titleSkillEn: `Skills`,
+      titleProfilePtBr: `Desenvolvedor de Software`,
+      titleProfileEn: `Software developer`,
+      titleAboutDefault: '',
+      textAboutDefault: '',
+      textSkillDefault: '',
+      titleProfileDefault: ''
     }
   },
   methods: {
@@ -62,10 +73,39 @@ export default {
       let b = moment("1998-12-30");
       return a.diff(b, "years");
     },
+    modifyLang(){
+      if(this.lang === 'en'){
+        document.getElementById('iconEn').style.borderBottom = '0';
+        document.getElementById('iconBr').style.borderBottom = '2px solid var(--color-text)';
+        this.titleAboutDefault = this.titleAboutPtBr
+        this.textAboutDefault = this.textAboutPtBr
+        this.textSkillDefault = this.titleSkillPtBr
+        this.titleProfileDefault = this.titleProfilePtBr
+        this.lang = 'pt'
+      }else{
+        document.getElementById('iconBr').style.borderBottom = '0';
+        document.getElementById('iconEn').style.borderBottom = '2px solid var(--color-text)';
+        this.titleAboutDefault = this.titleAboutEn
+        this.textAboutDefault = this.textAboutEn
+        this.textSkillDefault = this.titleSkillEn
+        this.titleProfileDefault = this.titleProfileEn
+        this.lang = 'en'
+      }
+    },
+    modifyMode(){
+      document.querySelector('html').classList.toggle('dark-mode')
+      this.mode = this.mode === this.modeDark ? this.modeLight : this.modeDark
+    }
   },
   created(){
-    this.titleDefault = this.titlePtBr
-    this.textDefault = this.textPtBr
+    this.titleAboutDefault = this.titleAboutPtBr
+    this.textAboutDefault = this.textAboutPtBr
+    this.textSkillDefault = this.titleSkillPtBr
+    this.titleProfileDefault = this.titleProfilePtBr
+    this.mode = this.modeDark
+  },
+  mounted(){
+    this.modifyLang()
   }
 };
 </script>
@@ -81,7 +121,16 @@ export default {
 #app > .utils > .icon {
   width: 25px;
   height: 25px;
+  
 }
+
+#app > .utils > .iconMode {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text);
+  margin:3px 10px 0px 0px;
+}
+
 #app {
   width: 914px;
   height: 540px;

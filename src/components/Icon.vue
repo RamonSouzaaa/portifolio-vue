@@ -2,24 +2,34 @@
     <div id="icon">
         <ul>
             <li>
-                <BIconGeoAltFill class="icon"/>
-                <span>Criciuma SC - Brasil</span>
+                <a href="#">
+                    <BIconGeoAltFill class="icon"/>
+                    <span>Criciúma SC - Brasil</span>
+                </a>    
             </li>
             <li>
-                <BIconInstagram class="icon"/>
-                <span>@ramon.souzz</span>
+                <a href="https://www.instagram.com/ramon.souzz/" target="__blank">
+                    <BIconInstagram class="icon"/>
+                    <span>@ramon.souzz</span>
+                </a>    
             </li>
             <li>
-                <BIconFacebook class="icon"/>
-                <span>@ramonsouza.dev</span>
+                <a href="https://www.facebook.com/ramonsouza.dev/" target="__blank">
+                    <BIconFacebook class="icon"/>
+                    <span>@ramonsouza.dev</span>
+                </a>
             </li>
             <li>
-                <BIconLinkedin class="icon"/>
-                <span>@ramonsouzadev</span>
+                <a href="https://www.linkedin.com/in/ramonsouzadev/" target="__blank">
+                    <BIconLinkedin class="icon"/>
+                    <span>@ramonsouzadev</span>
+                </a>    
             </li>
             <li>
-                <BIconGithub class="icon"/>
-                <span>@RamonSouzaaa</span>
+                <a href="https://github.com/RamonSouzaaa/" target="__blank">
+                    <BIconGithub class="icon"/>
+                    <span>@RamonSouzaaa</span>
+                </a>    
             </li>
         </ul>
     </div>
@@ -65,13 +75,14 @@
         row-gap: 10px;
     }
 
-    #icon > ul > li {
-        display: inline;
+    #icon > ul > li > a {
         display: flex;
         flex-direction: row;
         column-gap: 5px;
         align-items: center;
         font-family: 'Rubik-Medium';
+        text-decoration: none;
+        color: var(--color-text);
     }
 
     #icon > ul > li > .icon{
