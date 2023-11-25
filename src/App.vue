@@ -43,20 +43,17 @@ export default {
       modeDark: 'bi:sun-fill',
       mode: '',
       titleAboutPtBr: `Olá, tudo bem?`,
-      textAboutPtBr: `Me chamo Ramon tenho 23 anos, sou desenvolvedor de software pleno na
+    textAboutPtBr: `Me chamo Ramon tenho ` + this.calcAge() + ` anos, sou desenvolvedor de software na
           empresa Thomson Reuters Brasil desde 2017 quando iniciei minha
-          carreira como programador. Gosto de estudar novas tecnologias e
-          aprimorar meus conhecimentos, com isso conclui alguns projetos que
-          consegui na internet. Tenho conhecimento em banco de dados relacional,
+          carreira como desenvolvedor, gosto de estudar, correr e adoro café. Tenho conhecimento em banco de dados relacional,
           desenvolvimento de aplições web e desktop utilizando orientação a
           objetos.`,
       titleAboutEn: `Hi!`,
-      textAboutEn: `My name is Ramon, I'm 23 years old, I've been a full-time 
-               software developer at Thomson Reuters Brasil since 2017 when
-               I started my career as a programmer. I like to study new technologies 
-               and my knowledge, with that I complete some projects that I got 
-               on the internet. I have knowledge in relational database, web and 
-               desktop application development using object orientation.`,
+      textAboutEn: `My name is Ramon, I'm ` + this.calcAge() + ` years old, I'm a software developer at
+          company Thomson Reuters Brazil since 2017 when I started my
+          career as a developer, I like studying, running and I love coffee. I have knowledge in relational databases,
+          development of web and desktop applications with guidance
+          objects.`,
       titleSkillPtBr: `Habilidades`,
       titleSkillEn: `Skills`,
       titleProfilePtBr: `Desenvolvedor de Software`,
